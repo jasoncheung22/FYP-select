@@ -8,10 +8,13 @@ public class GetObject : MonoBehaviour{
     public float SelectedTime =0f;
     public static ArrayList SelectedFoodList = new ArrayList();
     private GetObject GetTemp;
+    private Inventory inventory;
+    private Item item;
+
     // Use this for initialization
     void Start () {
         GetTemp = GetComponent<GetObject>();
-
+        inventory = FindObjectOfType<Inventory>(); ;
     }
 
     private void OnDisable()
@@ -29,7 +32,7 @@ public class GetObject : MonoBehaviour{
             GetTemp.enabled = false;
             string temp = FoodManager.PassObjcetName();
             Debug.Log("The selection is :"+ temp);
-            if(temp == "remove")
+            if (temp == "remove")
             {
                 RemoveFood();
             }
@@ -39,7 +42,12 @@ public class GetObject : MonoBehaviour{
             }
             else
             {
-                PutFood(temp);
+                if (temp == "TestFood")
+                {
+                    item = Resources.Load<Item>("fish");
+                    Debug.Log(item);
+                    inventory.AddItem(item);
+                }
             }
         }
 	}
