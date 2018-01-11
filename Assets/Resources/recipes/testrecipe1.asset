@@ -9,7 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9be9a7a3b9923041a68e7084dbd0a33, type: 3}
-  m_Name: New Recipe
+  m_Name: testrecipe1
   m_EditorClassIdentifier: 
-  RecipeName: 
-  foods: []
+  RecipeName: testrecipe1
+  foods:
+  - {fileID: 11400000, guid: 06dd70cb508ff0940ab1559aa0b48b4a, type: 2}
+  - {fileID: 11400000, guid: fc8bd55046bf1864d95dba20838cdf4f, type: 2}
