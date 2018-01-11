@@ -34,17 +34,23 @@ public class GetObject : MonoBehaviour{
             Debug.Log("The selection is :"+ temp);
             if (temp == "remove")
             {
-                RemoveFood();
+                inventory.RemoveItem();
             }
             else if (temp == "submit")
             {
-                ShowFood();
+                inventory.GetItemInList();
             }
             else
             {
                 if (temp == "TestFood")
                 {
                     item = Resources.Load<Item>("fish");
+                    Debug.Log(item);
+                    inventory.AddItem(item);
+                }
+                if (temp == "TestFood2")
+                {
+                    item = Resources.Load<Item>("coin");
                     Debug.Log(item);
                     inventory.AddItem(item);
                 }
