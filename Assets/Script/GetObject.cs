@@ -10,11 +10,12 @@ public class GetObject : MonoBehaviour{
     private GetObject GetTemp;
     private Inventory inventory;
     private Item item;
+    private CustomerController CC;
 
     // Use this for initialization
     void Start () {
         GetTemp = GetComponent<GetObject>();
-        inventory = FindObjectOfType<Inventory>(); ;
+        inventory = FindObjectOfType<Inventory>();
     }
 
     private void OnDisable()
@@ -38,7 +39,9 @@ public class GetObject : MonoBehaviour{
             }
             else if (temp == "submit")
             {
-                inventory.GetItemInList();
+                CC = FindObjectOfType<CustomerController>();
+                CC.CheckFood();
+                inventory.RemoveAllItem();
             }
             else
             {

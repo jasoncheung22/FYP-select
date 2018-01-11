@@ -26,6 +26,17 @@ public class Inventory : MonoBehaviour {
 
     }
 
+    public void RemoveAllItem()
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+                items[i] = null;
+                itemImages[i].sprite = null;
+                itemImages[i].enabled = false;
+        }
+
+    }
+
     public void RemoveItem()
     {
         for (int i = 3; i >= 0; i--)
@@ -43,7 +54,8 @@ public class Inventory : MonoBehaviour {
 
     public Item[] GetItemInList()
     {
-        return items;
+        Item[] temp = items;
+        return temp;
     }
 
 
