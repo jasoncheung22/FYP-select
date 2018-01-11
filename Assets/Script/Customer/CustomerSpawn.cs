@@ -40,10 +40,10 @@ public class CustomerSpawn : MonoBehaviour {
         // End game
         if (customerServed == totalCustomer)
         {
-            Text gameOver = GameObject.Find("GameOver").GetComponent<Text>();
+            /*Text gameOver = GameObject.Find("GameOver").GetComponent<Text>();
             Color color = gameOver.color;
             color.a = 1;
-            gameOver.color = color;
+            gameOver.color = color;*/
         }
     }
 
@@ -63,6 +63,8 @@ public class CustomerSpawn : MonoBehaviour {
  public void destroyCustomer()
     {
         Destroy(currentCustomer);
+		Text text = GameObject.Find("Dish").GetComponent<Text>();
+		text.enabled = !text.enabled;
         currentCustomer = null;
         customerServed++;
     }

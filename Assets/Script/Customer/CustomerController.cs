@@ -20,25 +20,11 @@ public class CustomerController : MonoBehaviour
         // Pick a dish randomly
         chosenDish = recipe[Random.Range(0, recipe.Length)];
         text.text = chosenDish;
+
         //bubble = GameObject.Find("DishBubble").GetComponent<Image>();
-
-        color = text.color;
-        color.a = 1;
-        text.color = color;
-        //color = bubble.color;
-        color.a = 1;
-        //bubble.color = color;
+		text.enabled = !text.enabled;
     }
-
-    void OnDestroy()
-    {
-        color = text.color;
-        color.a = 0;
-        text.color = color;
-        //color = bubble.color;
-        color.a = 0;
-        //bubble.color = color;
-    }
+		
 
     public void CheckFood()
     {
